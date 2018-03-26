@@ -1,57 +1,10 @@
 <?php
 namespace app\index\controller;
 
-use think\Db;
-use think\Request;
-use think\Controller;
-use app\index\model\Index as IndexModel;
-
-class Index extends Controller
+class Index
 {
-	
     public function index()
     {
-      //无限极分类
-      $list = Db::name('category')->where('big=0')->select();//获取一级分类
-        //一级保存在数组中
-        $list2 = array();
-        $list3 = array();
-        foreach($list as $key=>$value) {
-          $list[$key]['child'] = array();
-          $list2 = Db::name('category')->where('big='. $value['sid'])->select();//获取二级分类
-
-          foreach($list2 as $k=>$v) {
-
-             array_push( $list[$key]['child'], $v);//合并一级与二级
-
-            $list[$key]['child'][$k]['child2']=array();//组装三级分类
-           
-          
-              $list3 = Db::name('category')->where('big='. $v['sid'])->select();
-             foreach($list3 as $v2) {
-                array_push($list[$key]['child'][$k]['child2'],$v2);
-             }
-            
-          }
-        }
-        //dump($list2);
-       $this->assign('list', $list);
-
-       $data = Db::name('goods')->where('attributes = 1')->select();
-       //dump($data);
-       $this->assign('data',$data);
-
-      $info = Db::table('shop_goods')
-              ->field('shop_goods.goodsname, shop_goods.curprice, shop_goods.imagepath,shop_goods.id')
-              ->view('shop_category','uname','shop_goods.tpid = shop_category.big')
-              ->limit(5)
-              ->select();
-              //dump($info);
-      $this->assign('info', $info);
-      
-       return $this->fetch();
+        return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span style="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_bd568ce7058a1091"></thinkad>';
     }
-
-   
-	
 }

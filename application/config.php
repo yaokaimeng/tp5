@@ -2,25 +2,24 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006~2016 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-	
+
 return [
-	//
-	'DEFAULT_MODULE'		=> 'Index',
-	'MODULE_ALLOW_LIST'		=> array('Index', 'Admin'),
     // +----------------------------------------------------------------------
     // | 应用设置
     // +----------------------------------------------------------------------
-	
+
+    // 应用命名空间
+    'app_namespace'          => 'app',
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -140,13 +139,9 @@ return [
         // 标签库标签结束标记
         'taglib_end'   => '}',
     ],
-	
+
     // 视图输出字符串内容替换
-    'view_replace_str'       => [
-		"__PUBLIC__" => "/public/",
-		"__ROOT__" => "/",
-		"__INDEX__" => "http://www.wan.com/"
-	],
+    'view_replace_str'       => [],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -242,22 +237,5 @@ return [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
-    ],
-    //验证码配置
-    'captcha' => [
-        // 验证码字符集合
-        'codeSet' => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
-        // 验证码字体大小(px)
-        'fontSize' => 20,
-        // 是否画混淆曲线
-        'useCurve' => true,
-        // 验证码图片高度
-        'imageH' => 50,
-        // 验证码图片宽度
-        'imageW' => 200,
-        // 验证码位数
-        'length' => 4,
-        // 验证成功后是否重置
-        'reset' => true
     ],
 ];
