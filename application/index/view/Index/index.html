@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>我健康商城</title>
+
+<link href='__INDEX__/static/css/comm.css' rel='stylesheet' type='text/css'>
+<link href='__INDEX__/static/css/style_index.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<script type="text/javascript" src="__INDEX__/static/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src='__INDEX__/static/js/lunbo.js'></script>
+<script type="text/javascript" src='__INDEX__/static/js/other.js'></script>
+
+
+<body>
+
+  <!-- 页眉 -->
+  <form action='' method=''>
+  
+            {include file="public/head"}
+
+  <div class='nav'>
+    <div class='W1200 nav_w'>
+      <!--竖着的导航-->
+      <ol class='nav_ol FL'>
+      	
+        <li><b><img src='__INDEX__/static/images/index_fl.png' /></b><a href='javascript:;' id='all'>全部分类</a></li>
+		{if !empty($list)}
+    	{foreach $list as $value}
+        <li style="height:">
+          <b><img src='__INDEX__/static/images/index_fl1.png' /></b>
+         
+          <a >{$value['uname']}</a>
+         
+          <span> &gt; </span>
+
+          <div class='nav_st'>
+           
+               <div class='nav_nr'>
+                {foreach $value['child'] as $val}
+                <p style="margin-left:10px;"><a href="{:url('lists/list',array('id'=>$val['sid']))}">{$val['uname']} &gt;</a></p>
+               
+                     {foreach $val['child2'] as $v}
+                    <em style="margin-left: 10px;">|<a href="{:url('lists/details',array('id'=>$v['sid']))}">{$v['uname']}</a></em>
+                    {/foreach}
+   
+    {/foreach}
+              </div>
+              
+         </div>
+          
+        </li>
+         {/foreach}
+      {/if}
+      
+      </ol>
+      <!--横着的导航-->
+      <ul class='nav_ul FL'>
+        
+        <li><a href='javascript:;'>首页</a></li>
+       
+        {foreach $list as $value}
+        <li><a href='javascript:;'>{$value['uname']}</a></li>
+        <!-- 
+        <li><a href='javascript:;'>器械商城</a></li> -->
+         {/foreach}
+        <li>
+         
+          <a href='javascript:;'>用药问答</a><img src='__INDEX__/static/images/index_sjx.png' />
+          <table cellpadding="0" cellspacing="0">
+            <tr><td><a href='javascript:;'>用药指南</a></td><td><a href='javascript:;'>健康资讯</a></td></tr>
+            <tr><td><a href='javascript:;'>皮肤科资讯</a></td><td><a href='javascript:;'>呼吸科资讯</a></td></tr>
+            <tr><td><a href='javascript:;'>妇科资讯</a></td><td><a href='javascript:;'>减肥瘦身</a></td></tr>
+            <tr><td><a href='javascript:;'>两性健康</a></td><td><a href='javascript:;'>健康问答</a></td></tr>
+          </table>  
+        </li>
+        <li><a href='javascript:;'>慢性病用药</a></li>
+        <li>
+          <a href='javascript:;'>掌上我健康</a><img src='__INDEX__/static/images/index_sjx.png' />
+          <div>
+            <p><img src='__INDEX__/static/images/ewm.png' /></p>
+            <p>关注微信</p>
+          </div>  
+        </li>
+        <li><a href='javascript:;'>超值秒杀</a></li>
+      </ul>
+      
+
+
+
+      
+      <!--右边的保证-->
+      
+    </div>
+  </div>
+  
+  <!-- banner -->
+  
+  <div class='banner'>
+    <div class='banner_ig'>
+      <div class='igs'>
+        <div class='ig'><div class='W1200'><img src='images/banner_1.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_2.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_3.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_4.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_5.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_6.png' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_7.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_8.jpg' title='' alt='' /></div></div>
+        <div class='ig'><div class='W1200'><img src='__INDEX__/static/images/banner_9.jpg' title='' alt='' /></div></div>
+      </div>
+     
+      <div class='W1200 banner_btn'>
+        <div class='btn btn1'></div>
+        <div class='btn btn2'></div>
+        <div class='yq'>
+          <div class='xyq xyq_ys'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+          <div class='xyq'></div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  
+  
+  <!-- 正文 -->
+  <!-- 超值秒杀 -->
+  <div class='margin'></div>
+  
+  
+  <div class='margin' style="margin-left: 100px;">
+
+     <iframe allowtransparency="true" frameborder="0" width="385" height="96" scrolling="no" src="//tianqi.2345.com/plugin/widget/index.htm?s=1&z=1&t=0&v=0&d=3&bd=0&k=&f=&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=54511&w=385&h=96&align=center"></iframe>
+
+     <!--音乐开始-->
+     <!--  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5220204&auto=1&height=66" style="margin-left: 300px;"></iframe> -->
+     <!--音乐结束-->
+  </div>
+  <!-- 健康推荐 -->
+  <div class='W1200 jktj' style="margin-top:100px;">
+    <div class='jktj_title'>
+      <div>健康推荐</div>
+    </div>
+    
+    <div class='jktj_nr'>
+      {if !empty($data)}
+    {foreach $data as $val}
+      <div class='jktj_mk'>
+        <p>
+          <a href="{:url('lists/details',array('id'=>$val['id']))}"><img src='__INDEX__/uploads/{$val.imagepath}' title='' alt='' /></a>
+        </p>
+        <p><a href='javascript:;'>{$val.goodsname}</a></p>
+        <p><span>￥{$val.curprice}</span></p>  
+      </div>
+    {/foreach}
+     {/if}
+    </div>
+
+  </div>
+  
+  <div class='margin'></div>
+  <div class='W1200'><img src='__INDEX__/static/images/index_g1.png' title='' alt='' /></div>
+  <div class='margin'></div>
+  
+  <!-- 1f -->
+  {foreach $list as $value}
+  <div class='W1200 floor floor_1'>
+    <div class='floor_title floor_first'> {$value.uname}</div>
+
+    <div class='floor_nr'>
+      
+      <div class='FL floor_list'>
+       
+        <ul>
+           {foreach $value['child'] as $val}
+          <li><a href='javascript:;'>{$val.uname}</a></li>
+          
+         {/foreach}
+        </ul>
+        
+        <p><img src='__INDEX__/static/images/floor1.png' title='' alt='' /></p>
+      </div>
+      
+      <div class='FL floor_info' style="width:960px;">
+        
+       
+        <table cellpadding="0" cellspacing="0" style="width:960px;">
+
+                 <tr style="width:960px;">
+
+            {foreach $info as $v}
+            <td>
+
+
+              <a href="{:url('lists/details',array('id'=>$v['id']))}">  
+           
+			    <p>{$v.goodsname}</p> 
+				
+                <p><img src='__INDEX__/uploads/{$v.imagepath}' title='' alt='' />{$v.uname}</p>
+				<p>￥{$v.curprice}</p>
+				<p style="background-color: white;"></p>
+				<p></p>
+              </a>
+              
+            </td>
+          <!--新添加的-->
+            <td rowspan="2" class="td_border">
+              <a href="javascript:;"><img src="images/index_product17.jpg" title="" alt=""></a>
+            </td>
+            <!--新添加的-->
+             {/foreach}
+            </tr>
+           
+        </table>
+     
+      </div>
+      
+    </div>
+
+  </div>
+  {/foreach}
+  
+ 
+  
+  
+  <!-- 热门品牌 -->
+  <div class='W1200 rmpp'>
+    <div class='rmpp_title'>
+      <div>热门品牌</div>
+    </div>
+    
+    <div class='rmpp_nr'>
+      
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp2.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp3.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp4.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp5.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp6.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp7.png' title='' alt='' /></a></div>
+      
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp8.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp9.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp10.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp11.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp12.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp13.png' title='' alt='' /></a></div>
+      <div class='rmpp_mk'><a href='javascript'><img src='__INDEX__/static/images/index_pp14.png' title='' alt='' /></a></div>
+
+    </div>
+
+  </div>
+  
+  <!-- 页脚 -->
+  {include file="public/foot"}
+ </form>
+</body>
+</html>

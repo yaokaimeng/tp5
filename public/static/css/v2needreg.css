@@ -1,0 +1,450 @@
+﻿@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-08-01 10:49:27
+ * @version $Id$
+ */
+html{ height:100%;}
+*{ margin:0 auto;padding: 0;}
+body{ color:#222222; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size:12px; background:#fff; }
+img { border: none; vertical-align: top;}
+ul, li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:14px;}
+map,map area{outline:none;}
+a{ text-decoration:none;color:#222;outline: none;}
+a:link { text-decoration: none;}
+a:visited { text-decoration: none;}
+a:hover { text-decoration: none;}
+a:active { text-decoration: none;}
+input, button, select{ font-size:12px;}
+textarea{ padding:5px;color:#333;}
+table{ border:none;}
+.text-elli {overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.clear {clear: both;height: 0;overflow: hidden;}
+.clearfix{zoom: 1; clear:both;}
+.clearfix:after {display: block;height: 0;overflow: hidden;content: " ";visibility: hidden;clear: both;}
+/*弹窗公用*/
+.PromptBox {
+    display: none;
+    width: 576px;
+    margin: 0 auto;
+    position: absolute;
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#80000000', EndColorStr='#80000000');
+    background-color: rgba(102, 102, 102, 0.5);
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    margin-top: -230px;
+    margin-left: -219px;
+    padding: 7px;
+}
+.PromptBox .BoxHead {
+    padding-left: 10px;
+    height: 36px;
+    line-height: 36px;
+    padding-top: 2px;
+    background: #eee;
+    color: #666666;
+}
+.PromptBox .BoxHead .BoxTitle {
+    float: left;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.PromptBox .BoxHead a.go_close {
+    float: right;
+    display: inline-block;
+    margin: 7px 7px 0px 0px;
+    font-size: 24px;
+    line-height: 20px;
+    text-indent: -3px;
+    width: 18px;
+    font-weight: bold;
+    height: 19px;
+}
+.PromptBox .BoxHead a.go_close:hover{
+    color: white;
+    background-color: #999;
+}
+/*弹窗公用end*/
+/*需求登记*/
+.needReg_form {
+    padding: 10px 15px 0 15px;
+    float: left;
+    overflow: hidden;
+    background: #fff;
+}
+.warmTips {
+    line-height: 24px;
+    color: #333;
+    padding-left: 26px;
+}
+.set_meal {
+    padding: 10px 0 10px 0;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+.ViperPrice {
+    width: 480px;
+    float: left;
+    padding-left: 38px;
+    line-height: 20px;
+    height: 26px;
+}
+.set_mealTitle, .num_title, .login_nameTile {
+    float: left;
+}
+.ViperPrice_num {
+    font-size: 20px;
+    font-family: '微软雅黑';
+    font-weight: bold;
+    float: left;
+    color: #D30A20;
+}
+.set_meal_num, .newNeedF {
+    padding-left: 50px;
+}
+.set_mealList {
+    width: 450px;
+    float: left;
+    overflow: hidden;
+    _padding-bottom: 5px;
+}
+.set_mealList, .set_mealList li {
+    float: left;
+}
+.set_mealList li {
+    border: 1px solid #ccc;
+    margin: 0 5px 5px 0;
+    display: inline;
+    color: #666;
+    white-space: nowrap;
+    cursor: pointer;
+    _cursor: hand;
+}
+.set_mealList li.addLi_hover {
+    background: url(../Images/ysuccess_icon.png) no-repeat right bottom;
+    border-color: #df2323;
+}
+.set_mealList li a {
+    display: block;
+    padding: 6px 10px;
+}
+.set_meal_num {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.set_meal_num, .newNeedF {
+    padding-left: 50px;
+}
+.reduce_icon {
+    width: 15px;
+    height: 14px;
+    background: url(../Images/cfdd_sp_bg.png) no-repeat 0 0;
+    display: inline;
+    margin: 6px 8px 0 0;
+}
+.reduce_icon, .addNumber, .add_icon {
+    float: left;
+}
+.addNumber {
+    width: 30px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Arial';
+    color: #333;
+    cursor: pointer;
+    _cursor: hand;
+}
+.addinput_hover {
+    background: url(../Images/ysuccess_icon.png) no-repeat right bottom;
+    border-color: #df2323;
+}
+.add_icon {
+    background-position: -16px 0;
+    margin: 6px 0 0 8px;
+}
+.person_infors {
+    padding: 10px 0 0 38px;
+    height: 158px;
+    overflow: hidden;
+}
+.logined_name, .login_name {
+    float: left;
+    width: 438px;
+    padding-bottom: 10px;
+}
+.logined_name {
+    display: none;
+}
+.get_person_address, .fixed_address {
+    color: #666;
+    float: left;
+    background: #fff;
+    margin-left: 13px;
+}
+.get_person_address {
+    text-decoration: underline;
+}
+.longined_data {
+    color: #666;
+    float: left;
+}
+.usersName, .usersAddress, .remarks {
+    float: left;
+    padding-left: 12px;
+    width: 438px;
+    line-height: 20px;
+}
+.usersName {
+    padding-bottom: 6px;
+}
+.usersName_txt, .users_phone_txt, .province_txt, .city_txt, .town_txt, .stree_txt {
+    width: 98px;
+    height: 20px;
+    padding-left: 2px;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    color: #666;
+}
+.users_phone_txt {
+    width: 170px;
+}
+.usersAddress {
+    height: 50px;
+    padding-bottom: 5px;
+    position: relative;
+}
+#RegionProvince {
+    width: 110px;
+    height: 22px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 5px;
+    display: inline;
+    position: absolute;
+    left: 48px;
+    top: 0;
+}
+#RegionCity, #RegionArea {
+    width: 75px;
+    height: 22px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 5px;
+    display: inline;
+    position: absolute;
+    left: 164px;
+    top: 0;
+}
+#RegionArea {
+    width: 120px;
+    left: 245px;
+}
+.stree_txt {
+    width: 314px;
+    margin: 5px 0;
+    display: inline;
+}
+#txtAddress {
+    position: absolute;
+    left: 13px;
+    top: 23px;
+    margin: 5px 0 5px 36px;
+}
+.remarks {
+    position: relative;
+    clear: both;
+}
+.remarks_txt {
+    height: 30px;
+    overflow-y: scroll;
+    position: absolute;
+    left: 49px;
+    top: 0;
+    z-index: 11;
+}
+.usersAddress_l, .remark_l, #txtRemark {
+    float: left;
+}
+#txtRemark {
+    width: 310px;
+    overflow-y: scroll;
+    resize: none;
+}
+.submitReg {
+    padding: 10px 50px 0 50px;
+}
+.submitReg_l samp {
+    color: #005eac;
+}
+.PromptBox .Box-operate {
+    background: #fff;
+    padding: 10px 10px;
+    text-align: center;
+}
+a.btn-blue, a.btn-red, a.btn-White {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    width: 66px;
+    padding: 0px 5px;
+    position: relative;
+}
+a.btn-blue, a.btn-red, a.btn-White, a.btn-blue i, a.btn-red i, a.btn-White i, a.btn-Bneed, .btn-addcart, .btn-need {
+    background: url(../Images/btn-kad.png) no-repeat;
+}
+a.btn-blue i, a.btn-red i, a.btn-White i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 28px;
+    background-position: -335px -608px;
+    cursor: pointer;
+}
+a.btn-blue {
+    background-position: 0px -608px;
+}
+a.btn-White {
+    color: #666;
+    background-position: 0px -736px;
+}
+a.btn-White i {
+    background-position: -335px -736px;
+}
+/*需求登记end*/
+/*更换地址*/
+.addNew_address {
+    padding: 20px 30px;
+    background: #fff;
+}
+#addNew_addressUl {
+    width: 420px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 120px;
+}
+.addNew_address ul li {
+    width: 400px;
+    float: left;
+    padding-bottom: 10px;
+}
+/*更换地址end*/
+/*需求提交成功*/
+.congrats_box {
+    background: #fff;
+}
+.congrats_box_top {
+    height: 92px;
+    padding: 44px 0 0 160px;
+    border-bottom: 1px dotted #ccc;
+    background: url(../Images/ysuccess_bg.png) no-repeat 110px 40px;
+    color: #333;
+    margin: 0 12px;
+}
+.congrats_box_top h3 {
+    font-size: 16px;
+}
+.congrats_box_top p {
+    padding-top: 5px;
+}
+.congrats_box_bottom {
+    padding: 10px 32px 14px 32px;
+}
+.congrats_box_bottom p {
+    color: #333;
+    line-height: 20px;
+}
+.congrats_box_bottom p span {
+    color: #005eac;
+}
+/*需求提交成功end*/
+/*提示框*/
+.Box-tips {
+    width: 400px;
+}
+.PromptBox .BoxBody {
+    background: #fff;
+    min-height: 100px;
+    height: auto;
+}
+.Box-tips .Bcon {
+    position: relative;
+    padding: 20px 30px 20px 60px;
+    line-height: 24px;
+    font-size: 14px;
+}
+.ico-tipsDui, .ico-tipsExc, .ico-tipsCuo {
+    background: url(../Images/ico-kad.png) no-repeat;
+    background-position: 0px -168px;
+    display: inline;
+    float: left;
+    width: 24px;
+    height: 24px;
+}
+.Box-tips .ico-tipsDui, .Box-tips .ico-tipsExc, .Box-tips .ico-tipsCuo {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+.ico-tipsCuo{
+    background-position: 0px -232px;
+}
+.ico-tipsExc {
+    background-position: 0px -200px;
+}
+.PromptBox .Box-operate {
+    background: #fff;
+    padding: 10px 10px;
+    text-align: center;
+}
+.Box-tips .Box-operate a {
+    float: right;
+    margin-left: 10px;
+}
+.rightFixed_l, .rightFixed_r, .rightFixed_m {
+    width: 94px;
+    height: 26px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+.addNew_address ul li {
+    width: 400px;
+    float: left;
+    padding-bottom: 10px;
+}
+.newaddress_txt {
+    width: 354px;
+    padding-left: 5px;
+    line-height: 14px;
+}
+.clicked_r {
+    width: 12px;
+    height: 12px;
+    float:left;
+}
+.rightFixed_l {
+    background: url(../Images/cfdd_sp_bg.png) no-repeat 0 -88px;
+}
+.rightFixed_r {
+    background: url(../Images/cfdd_sp_bg.png) no-repeat 0 -59px;
+}
+.rightFixed_m {
+    background: url(../Images/widthfixed_bg.png) no-repeat;
+}
+.rightFixed {
+    float: left;
+    width: 330px;
+    padding-left: 40px;
+}
+/*提示框end*/
